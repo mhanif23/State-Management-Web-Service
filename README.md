@@ -4,3 +4,5 @@ Aplikasi Flutter sederhana yang menampilkan daftar produk dari sebuah web servic
 
 ## Provider App berada di branch provider
 ## BLoC App berada di branch BLoC
+
+### Webservice : https://fakestoreapi.com/products
