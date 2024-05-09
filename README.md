@@ -14,6 +14,9 @@ Aplikasi Flutter sederhana yang menampilkan daftar produk dari sebuah web servic
 3. Jalankan `flutter pub get` untuk mengunduh dependensi.
 4. Jalankan aplikasi dengan perintah `flutter run`.
 
+## Kelompok : 
+Muhammad Hanif Abdillah & Muhammad Yusdan Ali Batubara
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
