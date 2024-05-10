@@ -18,7 +18,7 @@ class ProductBloc extends Bloc<ProductEvent, List<Product>> {
   }
 
   Future<List<Product>> fetchProducts() async {
-    final response = await http.get(Uri.parse('https://fakestoreapi.com/products'));
+    final response = await http.get(Uri.parse('http://localhost:3000/products'));
 
     if (response.statusCode == 200) {
       final List<dynamic> responseData = json.decode(response.body);

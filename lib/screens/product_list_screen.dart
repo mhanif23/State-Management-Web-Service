@@ -6,9 +6,6 @@ import '../models/product.dart';
 class ProductListScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // ignore: unused_local_variable
-    final productBloc = BlocProvider.of<ProductBloc>(context);
-
     return Scaffold(
       appBar: AppBar(
         title: Text('Product List'),
@@ -20,47 +17,70 @@ class ProductListScreen extends StatelessWidget {
               child: CircularProgressIndicator(),
             );
           } else {
-            return GridView.builder(
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                childAspectRatio: 3 / 4,
-              ),
+            return ListView.builder(
               itemCount: productList.length,
               itemBuilder: (ctx, index) {
                 Product product = productList[index];
                 return Card(
-                  elevation: 4,
-                  margin: EdgeInsets.all(8),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Expanded(
-                        child: Image.network(
-                          'https://picsum.photos/200',
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text(
-                          product.title,
+                  elevation: 8,
+                  margin: EdgeInsets.all(16),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          '${product.brand} ${product.model}',
                           style: TextStyle(
-                            fontSize: 16,
+                            fontSize: 18,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                        child: Text(
-                          '\$${product.price.toStringAsFixed(2)}',
+                        SizedBox(height: 8),
+                        Text(
+                          'Processor: ${product.processor}',
                           style: TextStyle(
-                            fontSize: 14,
-                            color: Colors.grey,
+                            fontSize: 16,
                           ),
                         ),
-                      ),
-                    ],
+                        Text(
+                          'RAM: ${product.ram}',
+                          style: TextStyle(
+                            fontSize: 16,
+                          ),
+                        ),
+                        Text(
+                          'Storage: ${product.storage}',
+                          style: TextStyle(
+                            fontSize: 16,
+                          ),
+                        ),
+                        Text(
+                          'Display Size: ${product.displaySize.toStringAsFixed(2)}"',
+                          style: TextStyle(
+                            fontSize: 16,
+                          ),
+                        ),
+                        Text(
+                          'Graphics Card: ${product.graphicsCard}',
+                          style: TextStyle(
+                            fontSize: 16,
+                          ),
+                        ),
+                        SizedBox(height: 8),
+                        Text(
+                          '\$${product.price.toStringAsFixed(2)}',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.blue,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 );
               },
