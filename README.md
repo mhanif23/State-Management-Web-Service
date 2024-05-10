@@ -8,6 +8,5 @@ Muhammad Hanif Abdillah & Muhammad Yusdan Ali Batubara
 ## Provider App berada di branch provider
 ## BLoC App berada di branch BLoC
 
-### Webservice : https://fakestoreapi.com/products
-
+### Webservice : NodeJS
 
