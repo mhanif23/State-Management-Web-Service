@@ -14,7 +14,7 @@ class ProductProvider with ChangeNotifier {
   }
 
   Future<void> fetchProducts() async {
-    final response = await http.get(Uri.parse('https://fakestoreapi.com/products'));
+    final response = await http.get(Uri.parse('http://localhost:5000/products'));
 
     if (response.statusCode == 200) {
       final List<dynamic> responseData = json.decode(response.body);
